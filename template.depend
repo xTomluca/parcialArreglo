@@ -1,0 +1,171 @@
+# depslib dependency file v1.0
+1524699666 source:d:\template\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"fantasma.h"
+	"utn.h"
+
+1524691839 source:d:\template\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1524691839 d:\template\utn.h
+
+1524700062 source:d:\template\fantasma.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"fantasma.h"
+	"utn.h"
+
+1524700062 d:\template\fantasma.h
+
+1524700064 source:d:\tls\templateprof\fantasma.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"fantasma.h"
+	"utn.h"
+
+1524700064 d:\tls\templateprof\fantasma.h
+
+1524691840 d:\tls\templateprof\utn.h
+
+1524691840 source:d:\tls\templateprof\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1524702826 source:d:\tls\templateprof\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"fantasma.h"
+	"utn.h"
+
+1526266200 source:d:\documentos varios\github\labclas1\templateprof\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"aviso.h"
+	"cliente.h"
+	"funciones.h"
+	"utn.h"
+
+1524691840 d:\documentos varios\github\labclas1\templateprof\utn.h
+
+1524691840 source:d:\documentos varios\github\labclas1\templateprof\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1526265620 source:d:\documentos varios\github\labclas1\templateprof\aviso.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"aviso.h"
+	"utn.h"
+	"funciones.h"
+	"cliente.h"
+
+1526265434 d:\documentos varios\github\labclas1\templateprof\aviso.h
+	"cliente.h"
+
+1526265436 source:d:\documentos varios\github\labclas1\templateprof\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"cliente.h"
+	"utn.h"
+	"funciones.h"
+
+1526261729 d:\documentos varios\github\labclas1\templateprof\cliente.h
+
+1526261523 d:\documentos varios\github\labclas1\templateprof\funciones.h
+	<string.h>
+	<ctype.h>
+
+1526261524 source:d:\documentos varios\github\labclas1\templateprof\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1526443589 source:d:\documentos varios\github\labclas1\parcial 1\aviso.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"aviso.h"
+	"utn.h"
+	"funciones.h"
+	"cliente.h"
+
+1526440000 d:\documentos varios\github\labclas1\parcial 1\aviso.h
+	"cliente.h"
+
+1526261729 d:\documentos varios\github\labclas1\parcial 1\cliente.h
+
+1524691840 d:\documentos varios\github\labclas1\parcial 1\utn.h
+
+1526425730 d:\documentos varios\github\labclas1\parcial 1\funciones.h
+	<string.h>
+	<ctype.h>
+
+1526444257 source:d:\documentos varios\github\labclas1\parcial 1\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"cliente.h"
+	"utn.h"
+	"funciones.h"
+
+1526426844 source:d:\documentos varios\github\labclas1\parcial 1\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1526443812 source:d:\documentos varios\github\labclas1\parcial 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"aviso.h"
+	"cliente.h"
+	"funciones.h"
+	"utn.h"
+	"informes.h"
+
+1524691840 source:d:\documentos varios\github\labclas1\parcial 1\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1526444875 source:d:\documentos varios\github\labclas1\parcial 1\informes.c
+	<stdio.h>
+	<stdlib.h>
+	"cliente.h"
+	"aviso.h"
+	"informes.h"
+
+1526444284 d:\documentos varios\github\labclas1\parcial 1\informes.h
+	"cliente.h"
+	"aviso.h"
+
