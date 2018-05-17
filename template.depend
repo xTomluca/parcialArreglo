@@ -169,3 +169,131 @@
 	"cliente.h"
 	"aviso.h"
 
+1526444257 source:c:\users\tomas\desktop\parcialarreglo\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"cliente.h"
+	"utn.h"
+	"funciones.h"
+
+1526261729 c:\users\tomas\desktop\parcialarreglo\cliente.h
+
+1524691840 c:\users\tomas\desktop\parcialarreglo\utn.h
+
+1526425730 c:\users\tomas\desktop\parcialarreglo\funciones.h
+	<string.h>
+	<ctype.h>
+
+1526426844 source:c:\users\tomas\desktop\parcialarreglo\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1524691840 source:c:\users\tomas\desktop\parcialarreglo\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1526526108 source:c:\users\tomas\desktop\parcialarreglo\informes.c
+	<stdio.h>
+	<stdlib.h>
+	"cliente.h"
+	"publicacion.h"
+	"informes.h"
+
+1526523027 c:\users\tomas\desktop\parcialarreglo\publicacion.h
+	"cliente.h"
+
+1526522471 c:\users\tomas\desktop\parcialarreglo\informes.h
+	"cliente.h"
+	"publicacion.h"
+
+1526525137 source:c:\users\tomas\desktop\parcialarreglo\publicacion.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+	"funciones.h"
+	"cliente.h"
+	"publicacion.h"
+
+1526526137 source:c:\users\tomas\desktop\parcialarreglo\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"publicacion.h"
+	"cliente.h"
+	"funciones.h"
+	"utn.h"
+	"informes.h"
+
+1526444257 source:d:\documentos varios\github\entregas\parcial arreglo\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"cliente.h"
+	"utn.h"
+	"funciones.h"
+
+1526261729 d:\documentos varios\github\entregas\parcial arreglo\cliente.h
+
+1524691840 d:\documentos varios\github\entregas\parcial arreglo\utn.h
+
+1526425730 d:\documentos varios\github\entregas\parcial arreglo\funciones.h
+	<string.h>
+	<ctype.h>
+
+1526426844 source:d:\documentos varios\github\entregas\parcial arreglo\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1526526272 source:d:\documentos varios\github\entregas\parcial arreglo\informes.c
+	<stdio.h>
+	<stdlib.h>
+	"cliente.h"
+	"publicacion.h"
+	"informes.h"
+
+1526523027 d:\documentos varios\github\entregas\parcial arreglo\publicacion.h
+	"cliente.h"
+
+1526522471 d:\documentos varios\github\entregas\parcial arreglo\informes.h
+	"cliente.h"
+	"publicacion.h"
+
+1526525137 source:d:\documentos varios\github\entregas\parcial arreglo\publicacion.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+	"funciones.h"
+	"cliente.h"
+	"publicacion.h"
+
+1524691840 source:d:\documentos varios\github\entregas\parcial arreglo\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1526526414 source:d:\documentos varios\github\entregas\parcial arreglo\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"publicacion.h"
+	"cliente.h"
+	"funciones.h"
+	"utn.h"
+	"informes.h"
+

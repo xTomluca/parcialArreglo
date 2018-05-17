@@ -1,51 +1,55 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "cliente.h"
-#include "aviso.h"
+#include "publicacion.h"
 #include "informes.h"
 
 /** \brief CLIENTES CON MAS PUBLICACIONES ACTIVAS
  *
  * \param clientes Cliente* ARRAY CLIENTE A TRABAJAR
- * \param avisos Aviso* ARRAY PUBLICACIONES (AVISOS) A TRABAJAR
+ * \param publicaciones Publicacion* ARRAY PUBLICACIONES A TRABAJAR
  * \param limiteCliente int LIMITE ARRAY CLIENTE
- * \param limiteAviso int LIMITE ARRAY PUBLICACIONES (AVISOS)
+ * \param limitePublicacion int LIMITE ARRAY PUBLICACIONES
  * \return int RETORNO [0] = IMPRIME // [1] ERROR!!
  *
  */
-int informar_clienteMasActivo(Cliente* clientes, Aviso* avisos, int limiteCliente, int limiteAviso)
+int informar_clienteMasActivo(Cliente* clientes, Publicacion* publicaciones, int limiteCliente, int limitePublicacion)
 {
-    int i,j,maximo,cantidadAvisosActivos[limiteCliente],retorno=1;
-    if(limiteCliente > 0 && limiteAviso > 0 && clientes != NULL && avisos != NULL)
+    int i,j,maximo,cantidadPublicActivas[limiteCliente],retorno=1;
+    if(limiteCliente > 0 && limitePublicacion > 0 && clientes != NULL && publicaciones != NULL)
     {
         for(i=0;i<limiteCliente;i++)
         {
-            cantidadAvisosActivos[i]=0;
+            cantidadPublicActivas[i]=0;
             if(!clientes[i].isEmpty)
             {
-                for(j=0;j<limiteAviso;j++)
+                for(j=0;j<limitePublicacion;j++)
                 {
-                    if(!avisos[j].isEmpty&&!avisos[j].estado&&avisos[j].idCliente==clientes[i].idCliente)
+                    if(!publicaciones[j].isEmpty&&!publicaciones[j].estado&&publicaciones[j].idCliente==clientes[i].idCliente)
                     {
-                        cantidadAvisosActivos[i]+=1;
+                        cantidadPublicActivas[i]+=1;
                         retorno=0;
                     }
                 }
             }
 
         }
-        maximo=cantidadAvisosActivos[0];
+        maximo=cantidadPublicActivas[0];
         for(i=0;i<limiteCliente;i++)
         {
-            if(maximo<cantidadAvisosActivos[i])
+            if(maximo<cantidadPublicActivas[i])
             {
-                maximo=cantidadAvisosActivos[i];
+                maximo=cantidadPublicActivas[i];
             }
         }
-        for(i=0;i<limiteCliente;i++)
+        if(maximo>0)
         {
-            if(maximo>0&&cantidadAvisosActivos[i]==maximo&&!avisos[i].isEmpty&&!clientes[i].isEmpty)
-            printf("\nNombre: %s Apellido: %s Cuit: %s ID: %d Cantidad publicaciones activas: %d\n\n",clientes[i].nombre,clientes[i].apellido,clientes[i].cuit,clientes[i].idCliente,cantidadAvisosActivos[i]);
+            printf("CLIENTE/s CON MAS PUBLICACIONES ACTIVAS: \n");
+            for(i=0;i<limiteCliente;i++)
+            {
+                if(maximo>0&&cantidadPublicActivas[i]==maximo&&!publicaciones[i].isEmpty&&!clientes[i].isEmpty)
+                printf("\nNombre: %s Apellido: %s Cuit: %s ID: %d Cantidad publicaciones activas: %d\n\n",clientes[i].nombre,clientes[i].apellido,clientes[i].cuit,clientes[i].idCliente,cantidadPublicActivas[i]);
+            }
         }
 
     }
@@ -55,46 +59,51 @@ int informar_clienteMasActivo(Cliente* clientes, Aviso* avisos, int limiteClient
 /** \brief INFORMA CLIENTES CON MAS PUBLICACIONES PAUSADAS
  *
  * \param clientes Cliente* ARRAY CLIENTE A TRABAJAR
- * \param avisos Aviso* ARRAY PUBLICACIONES (AVISOS) A TRABAJAR
+ * \param publicaciones Publicacion* ARRAY PUBLICACIONES A TRABAJAR
  * \param limiteCliente int LIMITE ARRAY CLIENTE
- * \param limiteAviso int LIMITE ARRAY PUBLICACIONES (AVISOS)
+ * \param limitePublicacion int LIMITE ARRAY PUBLICACIONES
  * \return int RETORNO [0] = IMPRIME // [1] ERROR!!
  *
  */
-int informar_clienteMasPausado(Cliente* clientes, Aviso* avisos, int limiteCliente, int limiteAviso)
+int informar_clienteMasPausado(Cliente* clientes, Publicacion* publicaciones, int limiteCliente, int limitePublicacion)
 {
-    int i,j,maximo,cantidadAvisosPausados[limiteCliente],retorno=1;
-    if(limiteCliente > 0 && limiteAviso > 0 && clientes != NULL && avisos != NULL)
+    int i,j,maximo,cantidadPublicPausadas[limiteCliente],retorno=1;
+    if(limiteCliente > 0 && limitePublicacion > 0 && clientes != NULL && publicaciones != NULL)
     {
         for(i=0;i<limiteCliente;i++)
         {
-            cantidadAvisosPausados[i]=0;
+            cantidadPublicPausadas[i]=0;
             if(!clientes[i].isEmpty)
             {
-                    for(j=0;j<limiteAviso;j++)
+                    for(j=0;j<limitePublicacion;j++)
                     {
-                        if(!avisos[j].isEmpty&&avisos[j].estado==1&&avisos[j].idCliente==clientes[i].idCliente)
+                        if(!publicaciones[j].isEmpty&&publicaciones[j].estado==1&&publicaciones[j].idCliente==clientes[i].idCliente)
                         {
-                            cantidadAvisosPausados[i]+=1;
+                            cantidadPublicPausadas[i]+=1;
                             retorno=0;
                         }
                     }
             }
 
         }
-        maximo=cantidadAvisosPausados[0];
+        maximo=cantidadPublicPausadas[0];
         for(i=0;i<limiteCliente;i++)
         {
-            if(maximo<cantidadAvisosPausados[i])
+            if(maximo<cantidadPublicPausadas[i])
             {
-                maximo=cantidadAvisosPausados[i];
+                maximo=cantidadPublicPausadas[i];
             }
         }
-        for(i=0;i<limiteCliente;i++)
+        if(maximo>0)
         {
-            if(maximo>0&&cantidadAvisosPausados[i]==maximo&&!avisos[i].isEmpty&&!clientes[i].isEmpty)
-            printf("\nNombre: %s Apellido: %s Cuit: %s ID: %d Cantidad publicaciones inactivas: %d\n",clientes[i].nombre,clientes[i].apellido,clientes[i].cuit,clientes[i].idCliente,cantidadAvisosPausados[i]);
+            printf("CLIENTE/s CON MAS PUBLICACIONES PAUSADAS: \n");
+            for(i=0;i<limiteCliente;i++)
+            {
+                if(maximo>0&&cantidadPublicPausadas[i]==maximo&&!publicaciones[i].isEmpty&&!clientes[i].isEmpty)
+                printf("\nNombre: %s Apellido: %s Cuit: %s ID: %d Cantidad publicaciones inactivas: %d\n\n",clientes[i].nombre,clientes[i].apellido,clientes[i].cuit,clientes[i].idCliente,cantidadPublicPausadas[i]);
+            }
         }
+
 
     }
     return retorno;
@@ -102,67 +111,70 @@ int informar_clienteMasPausado(Cliente* clientes, Aviso* avisos, int limiteClien
 /** \brief INFORMA CLIENTES CON MAS AVISOS
  *
  * \param clientes Cliente* ARRAY CLIENTE A TRABAJAR
- * \param avisos Aviso* ARRAY PUBLICACIONES (AVISOS) A TRABAJAR
+ * \param publicaciones Publicacion* ARRAY PUBLICACIONES A TRABAJAR
  * \param limiteCliente int LIMITE ARRAY CLIENTE
- * \param limiteAviso int LIMITE ARRAY PUBLICACIONES (AVISOS)
+ * \param limitePublicacion int LIMITE ARRAY PUBLICACIONES
  * \return int RETORNO [0] = IMPRIME // [1] ERROR!!
  *
  */
-int informar_clienteMasAvisos(Cliente* clientes, Aviso* avisos, int limiteCliente, int limiteAviso)
+int informar_clienteMasPublicaciones(Cliente* clientes, Publicacion* publicaciones, int limiteCliente, int limitePublicacion)
 {
-    int i,j,maximo,cantidadAvisos[limiteCliente],retorno=1;
-    if(limiteCliente > 0 && limiteAviso > 0 && clientes != NULL && avisos != NULL)
+    int i,j,maximo,cantidadPublicaciones[limiteCliente],retorno=1;
+    if(limiteCliente > 0 && limitePublicacion > 0 && clientes != NULL && publicaciones != NULL)
     {
         for(i=0;i<limiteCliente;i++)
         {
-            cantidadAvisos[i]=0;
+            cantidadPublicaciones[i]=0;
             if(!clientes[i].isEmpty)
             {
-                    for(j=0;j<limiteAviso;j++)
+                    for(j=0;j<limitePublicacion;j++)
                     {
-                        if(!avisos[j].isEmpty&&avisos[j].idCliente==clientes[i].idCliente)
+                        if(!publicaciones[j].isEmpty&&publicaciones[j].idCliente==clientes[i].idCliente)
                         {
-                            cantidadAvisos[i]+=1;
+                            cantidadPublicaciones[i]+=1;
                             retorno=0;
                         }
                     }
             }
 
         }
-        maximo=cantidadAvisos[0];
+        maximo=cantidadPublicaciones[0];
         for(i=0;i<limiteCliente;i++)
         {
-            if(maximo<cantidadAvisos[i])
+            if(maximo<cantidadPublicaciones[i])
             {
-                maximo=cantidadAvisos[i];
+                maximo=cantidadPublicaciones[i];
             }
         }
-        for(i=0;i<limiteCliente;i++)
+        if(maximo>0)
         {
-            if(maximo>0&&cantidadAvisos[i]==maximo&&!avisos[i].isEmpty)
-            printf("\nNombre: %s Apellido: %s Cuit: %s ID: %d Cantidad publicaciones : %d\n",clientes[i].nombre,clientes[i].apellido,clientes[i].cuit,clientes[i].idCliente,cantidadAvisos[i]);
+            printf("CLIENTE/s CON MAS PUBLICACIONES: \n");
+            for(i=0;i<limiteCliente;i++)
+            {
+                if(maximo>0&&cantidadPublicaciones[i]==maximo&&!publicaciones[i].isEmpty)
+                printf("\nNombre: %s Apellido: %s Cuit: %s ID: %d Cantidad publicaciones : %d\n\n",clientes[i].nombre,clientes[i].apellido,clientes[i].cuit,clientes[i].idCliente,cantidadPublicaciones[i]);
+            }
         }
-
     }
     return retorno;
 }
 
 /** \brief IMFORMA CANTIDAD DE PUBLICACIONES DE RUBRO SOLICITADO
  *
- * \param avisos Aviso* ARRAY DE PUBLICACIONES (AVISOS) A TRABAJAR
- * \param limiteAviso int LIMITE DE PUBLICACIONES (AVISOS)
+ * \param publicaciones Publicacion* ARRAY DE PUBLICACIONES A TRABAJAR
+ * \param limitePublicacion int LIMITE DE PUBLICACIONES
  * \param rubro int RUBRO A COMPARAR
  * \return int RETORNO [0] = IMPRIME // [1] ERROR!!
  *
  */
-int informar_publicacionRubro(Aviso* avisos, int limiteAviso,int rubro)
+int informar_publicacionRubro(Publicacion* publicaciones, int limitePublicacion,int rubro)
 {
     int i,cantidad=0,retorno=1;
-    if(limiteAviso > 0 && avisos != NULL)
+    if(limitePublicacion > 0 && publicaciones != NULL)
     {
-        for(i=0;i<limiteAviso;i++)
+        for(i=0;i<limitePublicacion;i++)
         {
-            if(avisos[i].rubro==rubro &&!avisos[i].estado&&!avisos[i].isEmpty)
+            if(publicaciones[i].rubro==rubro &&!publicaciones[i].estado&&!publicaciones[i].isEmpty)
             {
                 cantidad+=1;
                 retorno=0;
@@ -171,7 +183,7 @@ int informar_publicacionRubro(Aviso* avisos, int limiteAviso,int rubro)
         if(cantidad>0)
         {
             printf("\n//------INFORME RUBRO --- CANTIDAD------//");
-            printf("\nRubro %d - Cantidad de publicaciones: %d\n\n",rubro, cantidad);
+            printf("\nRubro %d - Cantidad de publicaciones: %d\n",rubro, cantidad);
         }
 
     }
@@ -180,42 +192,48 @@ int informar_publicacionRubro(Aviso* avisos, int limiteAviso,int rubro)
 
 /** \brief IMPRIME RUBRO/s CON MAS PUBLICACIONES ACTIVAS
  *
- * \param avisos Aviso* ARRAY DE PUBLICACIONES (AVISOS) A TRABAJAR
- * \param limiteAviso int LIMITE DE PUBLICACIONES (AVISOS)
+ * \param publicaciones Publicacion* ARRAY DE PUBLICACIONES A TRABAJAR
+ * \param limitePublicacion int LIMITE DE PUBLICACIONES
  * \param limiterubro int LIMITE RUBROS
  * \return int RETORNO [0] = IMPRIME // [1] ERROR!!
  *
  */
-int informar_publicacionRubroAct(Aviso* avisos, int limiteAviso,int limiterubro)
+int informar_publicacionRubroAct(Publicacion* publicaciones, int limitePublicacion,int limiterubro)
 {
     int i,j,maximo,cantidad[limiterubro],retorno=1;
-    for(i=0;i<limiterubro;i++)
+    if(limitePublicacion > 0 && publicaciones != NULL)
     {
-        cantidad[i]=0;
-        for(j=0;j<limiteAviso;j++)
-        {
-            if(avisos[j].rubro==i &&avisos[j].rubro!=-1&&!avisos[j].estado&&!avisos[j].isEmpty)
-            {
-                cantidad[i]+=1;
-                retorno=0;
-            }
-        }
-    }
-    maximo=cantidad[0];
-    for(i=0;i<limiterubro;i++)
-    {
-        if(maximo<cantidad[i])
-        {
-            maximo=cantidad[i];
-        }
-    }
-    if(maximo>0)
-    {
-        printf("//-----RUBRO/s CON MAS PUBLICACIONES ACTIVAS----//");
         for(i=0;i<limiterubro;i++)
         {
-            if(cantidad[i]==maximo)
-            printf("\nRUBRO %d PUBLICACIONES ACTIVAS: %d\n",i,cantidad[i]);
+            cantidad[i]=0;
+            for(j=0;j<limitePublicacion;j++)
+            {
+                if(publicaciones[j].rubro==i &&publicaciones[j].rubro!=-1&&!publicaciones[j].estado&&!publicaciones[j].isEmpty)
+                {
+                    cantidad[i]+=1;
+                    retorno=0;
+                }
+            }
+        }
+        maximo=cantidad[0];
+        for(i=0;i<limiterubro;i++)
+        {
+            if(maximo<cantidad[i])
+            {
+                maximo=cantidad[i];
+            }
+        }
+        if(maximo>0)
+        {
+            printf("\n");
+            printf("//-----RUBRO/s CON MAS PUBLICACIONES ACTIVAS----//");
+            printf("\n");
+            for(i=0;i<limiterubro;i++)
+            {
+                if(cantidad[i]==maximo)
+                printf("\nRUBRO: %d CANTIDAD: %d\n",i,cantidad[i]);
+            }
+            printf("\n");
         }
     }
     return retorno;
@@ -223,42 +241,50 @@ int informar_publicacionRubroAct(Aviso* avisos, int limiteAviso,int limiterubro)
 
 
 
-/** \brief IMPRIME RUBRO/s CON MENOS PUBLICACIONES ACTIVAS
+/** \brief IMPRIME RUBRO/s CON MENOS PUBLICACIONES ACTIVAS > 0 (NO LISTO RUBRO CON 0 PUBLICACIONES)
  *
- * \param avisos Aviso* ARRAY DE PUBLICACIONES (AVISOS) A TRABAJAR
- * \param limiteAviso int LIMITE DE PUBLICACIONES (AVISOS)
+ * \param publicaciones Publicacion* ARRAY DE PUBLICACIONES A TRABAJAR
+ * \param limitePublicacion int LIMITE DE PUBLICACIONES
  * \param limiterubro int LIMITE RUBROS
  * \return int RETORNO [0] = IMPRIME // [1] ERROR!!
  *
  */
-int informar_publicacionRubroMenosAct(Aviso* avisos, int limiteAviso,int limiterubro)
+int informar_publicacionRubroMenosAct(Publicacion* publicaciones, int limitePublicacion,int limiterubro)
 {
     int i,j,minimo,cantidad[limiterubro],retorno=1;
-    for(i=0;i<limiterubro;i++)
+    if(limitePublicacion > 0 && publicaciones != NULL)
     {
-        cantidad[i]=0;
-        for(j=0;j<limiteAviso;j++)
+        for(i=0;i<limiterubro;i++)
         {
-            if(avisos[j].rubro==i &&avisos[j].rubro!=-1&&!avisos[j].estado&&!avisos[j].isEmpty)
+            cantidad[i]=0;
+            for(j=0;j<limitePublicacion;j++)
             {
-                cantidad[i]+=1;
-                retorno=0;
+                if(publicaciones[j].rubro==i &&publicaciones[j].rubro!=-1&&!publicaciones[j].estado&&!publicaciones[j].isEmpty)
+                {
+                    cantidad[i]+=1;
+                    retorno=0;
+                }
             }
         }
-    }
-    minimo=limiteAviso;
-    for(i=0;i<limiterubro;i++)
-    {
-        if(minimo>cantidad[i])
+        minimo=limitePublicacion;
+        for(i=0;i<limiterubro;i++)
         {
-            minimo=cantidad[i];
+            if(minimo>cantidad[i] && cantidad[i]>0)
+            {
+                minimo=cantidad[i];
+            }
         }
-    }
-    printf("//-----RUBRO/s CON MENOS PUBLICACIONES ACTIVAS----//");
-    for(i=0;i<limiterubro;i++)
-    {
-        if(cantidad[i]==minimo)
-        printf("\nRUBRO MENOS PUBLICACIONES ACTIVAS: %d\n",i);
+        if(minimo>0)
+        {
+            printf("//-----RUBRO/s CON MENOS PUBLICACIONES ACTIVAS----//\n");
+            for(i=0;i<limiterubro;i++)
+            {
+                if(cantidad[i]==minimo)
+                printf("\nRUBRO: %d CANTIDAD: %d\n",i,cantidad[i]);
+            }
+            printf("\n");
+        }
+
     }
     return retorno;
 }
