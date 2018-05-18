@@ -36,7 +36,6 @@ int main()
     publicacion_altaForzada(publicaciones,clientes,PUBLICACION,CLIENTE,"octava publicacion",0,6);
     publicacion_altaForzada(publicaciones,clientes,PUBLICACION,CLIENTE,"novena",2,6);
     publicacion_altaForzada(publicaciones,clientes,PUBLICACION,CLIENTE,"decima",1,6);*/
-
     do
     {
         fflush(stdin);

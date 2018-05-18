@@ -297,3 +297,67 @@
 	"utn.h"
 	"informes.h"
 
+1526526490 source:d:\tomas\parcialarreglo-master\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"cliente.h"
+	"utn.h"
+	"funciones.h"
+
+1526526490 d:\tomas\parcialarreglo-master\cliente.h
+
+1526526490 d:\tomas\parcialarreglo-master\utn.h
+
+1526526490 d:\tomas\parcialarreglo-master\funciones.h
+	<string.h>
+	<ctype.h>
+
+1526526490 source:d:\tomas\parcialarreglo-master\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1526526490 source:d:\tomas\parcialarreglo-master\informes.c
+	<stdio.h>
+	<stdlib.h>
+	"cliente.h"
+	"publicacion.h"
+	"informes.h"
+
+1526526490 d:\tomas\parcialarreglo-master\publicacion.h
+	"cliente.h"
+
+1526526490 d:\tomas\parcialarreglo-master\informes.h
+	"cliente.h"
+	"publicacion.h"
+
+1526594857 source:d:\tomas\parcialarreglo-master\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"publicacion.h"
+	"cliente.h"
+	"funciones.h"
+	"utn.h"
+	"informes.h"
+
+1526526490 source:d:\tomas\parcialarreglo-master\publicacion.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+	"funciones.h"
+	"cliente.h"
+	"publicacion.h"
+
+1526526490 source:d:\tomas\parcialarreglo-master\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
