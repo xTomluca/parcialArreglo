@@ -17,7 +17,6 @@ int verificacionDigito(char *auxCarga, char *mensajeError, int tamanioVector)
     int retorno =1;
     while(i<j-1)
     {
-        retorno =1;
         if(isdigit(auxCarga[i])!=0)
         {
             i++;
@@ -30,6 +29,7 @@ int verificacionDigito(char *auxCarga, char *mensajeError, int tamanioVector)
             fgets(auxCarga, tamanioVector, stdin);
             j=strlen(auxCarga);
             i=0;
+            retorno =1;
 
         }
     }

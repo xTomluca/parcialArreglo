@@ -47,8 +47,12 @@ int informar_clienteMasActivo(Cliente* clientes, Publicacion* publicaciones, int
             printf("CLIENTE/s CON MAS PUBLICACIONES ACTIVAS: \n");
             for(i=0;i<limiteCliente;i++)
             {
-                if(maximo>0&&cantidadPublicActivas[i]==maximo&&!publicaciones[i].isEmpty&&!clientes[i].isEmpty)
-                printf("\nNombre: %s Apellido: %s Cuit: %s ID: %d Cantidad publicaciones activas: %d\n\n",clientes[i].nombre,clientes[i].apellido,clientes[i].cuit,clientes[i].idCliente,cantidadPublicActivas[i]);
+                //for(j=0;j<limitePublicacion;j++)
+                //{
+                    if(maximo>0&&cantidadPublicActivas[i]==maximo&&!publicaciones[i].isEmpty&&!clientes[i].isEmpty)
+                    printf("\nNombre: %s Apellido: %s Cuit: %s ID: %d Cantidad publicaciones activas: %d\n\n",clientes[i].nombre,clientes[i].apellido,clientes[i].cuit,clientes[i].idCliente,cantidadPublicActivas[i]);
+                //}
+
             }
         }
 
@@ -97,10 +101,14 @@ int informar_clienteMasPausado(Cliente* clientes, Publicacion* publicaciones, in
         if(maximo>0)
         {
             printf("CLIENTE/s CON MAS PUBLICACIONES PAUSADAS: \n");
+
             for(i=0;i<limiteCliente;i++)
             {
-                if(maximo>0&&cantidadPublicPausadas[i]==maximo&&!publicaciones[i].isEmpty&&!clientes[i].isEmpty)
-                printf("\nNombre: %s Apellido: %s Cuit: %s ID: %d Cantidad publicaciones inactivas: %d\n\n",clientes[i].nombre,clientes[i].apellido,clientes[i].cuit,clientes[i].idCliente,cantidadPublicPausadas[i]);
+                //for(i=0;i<limiteCliente;i++)
+                //{
+                    if(maximo>0&&cantidadPublicPausadas[i]==maximo&&!publicaciones[j].isEmpty&&!clientes[i].isEmpty)
+                    printf("\nNombre: %s Apellido: %s Cuit: %s ID: %d Cantidad publicaciones inactivas: %d\n\n",clientes[i].nombre,clientes[i].apellido,clientes[i].cuit,clientes[i].idCliente,maximo);
+                //}
             }
         }
 
@@ -151,8 +159,8 @@ int informar_clienteMasPublicaciones(Cliente* clientes, Publicacion* publicacion
             printf("CLIENTE/s CON MAS PUBLICACIONES: \n");
             for(i=0;i<limiteCliente;i++)
             {
-                if(maximo>0&&cantidadPublicaciones[i]==maximo&&!publicaciones[i].isEmpty)
-                printf("\nNombre: %s Apellido: %s Cuit: %s ID: %d Cantidad publicaciones : %d\n\n",clientes[i].nombre,clientes[i].apellido,clientes[i].cuit,clientes[i].idCliente,cantidadPublicaciones[i]);
+                    if(maximo>0&&cantidadPublicaciones[i]==maximo&&!publicaciones[i].isEmpty)
+                    printf("\nNombre: %s Apellido: %s Cuit: %s ID: %d Cantidad publicaciones : %d\n\n",clientes[i].nombre,clientes[i].apellido,clientes[i].cuit,clientes[i].idCliente,cantidadPublicaciones[i]);
             }
         }
     }

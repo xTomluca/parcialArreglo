@@ -39,7 +39,7 @@ int main()
     do
     {
         fflush(stdin);
-        getNumero(11,0,&menu,"1.Alta\n2.Baja\n3.Modificar\n4.Publicar publicacion\n5.Pausar publicacion\n6.Reanudar publicacion\n7.Listar clientes\n8.Listar publicaciones activas\n9.Informar usuario\n10.Publicaciones RUBRO\n11.Informe rubros\n\n0.Salir\n","\nNo valida\n");
+        getNumero(10,0,&menu,"1.Alta\n2.Baja\n3.Modificar\n4.Publicar publicacion\n5.Pausar publicacion\n6.Reanudar publicacion\n7.Listar clientes\n8.Listar publicaciones activas\n9.Informar usuario\n10.Informar publicaciones\n\n0.Salir\n","\nNo valida\n");
         switch(menu)
         {
             case 1:
@@ -59,6 +59,7 @@ int main()
                 }
                 break;
             case 3:
+                getNumero(CLIENTE,0,&auxiliarId,"\nID: ","\nID INVALIDO");
                 cliente_modificacion(clientes,CLIENTE,auxiliarId);
                 break;
             case 4:
@@ -86,13 +87,12 @@ int main()
             case 10:
                 getNumero(RUBRO,0,&auxiliarId,"\nRUBRO: ","\nRUBRO INVALIDO");
                 informar_publicacionRubro(publicaciones,PUBLICACION,auxiliarId);
-                break;
-            case 11:
                 informar_publicacionRubroAct(publicaciones,PUBLICACION,RUBRO);
                 informar_publicacionRubroMenosAct(publicaciones,PUBLICACION,RUBRO);
                 break;
+            default:
+                break;
         }
-
     }while(menu != 0);
 
     return 0;

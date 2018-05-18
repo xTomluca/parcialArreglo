@@ -81,7 +81,7 @@ int publicacion_alta(Publicacion* array,Cliente* arrayCliente,int limiteA,int li
         {
             if(!getCadena(texto,"Ingrese descripcion publicacion: ","ERROR!!"))
             {
-                if(!getNumero(20,1,&rubro,"Ingrese rubro producto: ","ERROR!!!"))
+                if(!getNumero(20,1,&rubro,"Ingrese rubro producto: ","ERROR!!! REINGRESE RUBRO: "))
                 {
                     retorno = 0;
                     strcpy(array[i].texto,texto);
@@ -89,6 +89,7 @@ int publicacion_alta(Publicacion* array,Cliente* arrayCliente,int limiteA,int li
                     array[i].idPublicacion = proximoIdPublicacion();
                     array[i].isEmpty = 0;
                     array[i].estado=0;
+                    array[i].rubro=rubro;
                     printf("Publicacion grabada con exito!! El id es: %d\n", array[i].idPublicacion);
                 }
             }
@@ -275,12 +276,12 @@ int listarClientes(Cliente* clientes, Publicacion* publicaciones, int limiteClie
         {
             cantidadPublicActivos=0;
             for(j=0;j<limitePublicacion;j++){
-                if(publicaciones[j].idCliente==clientes[i].idCliente)
+                if(!publicaciones[j].isEmpty&&!publicaciones[j].estado&&publicaciones[j].idCliente==clientes[i].idCliente)
                 {
                     cantidadPublicActivos=cantidadPublicActivos+1;
                 }
             }
-            if(!publicaciones[i].estado&&!publicaciones[i].isEmpty&&!clientes[i].isEmpty)
+            if(!clientes[i].isEmpty)
             {
                 retorno=0;
                 printf("\nNombre: %s Apellido: %s Cuit: %s ID: %d Cantidad publicaciones activas: %d\n",clientes[i].nombre,clientes[i].apellido,clientes[i].cuit,clientes[i].idCliente,cantidadPublicActivos);

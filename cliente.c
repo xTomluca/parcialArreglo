@@ -88,6 +88,8 @@ int cliente_alta(Cliente* array,int limite)
                         strcpy(array[i].cuit,cuit);
                         array[i].idCliente = proximoIdCliente();
                         array[i].isEmpty = 0;
+                        printf("El id cliente es: %d\n", array[i].idCliente);
+
                     }
                 }
             }

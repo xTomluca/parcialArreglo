@@ -297,7 +297,7 @@
 	"utn.h"
 	"informes.h"
 
-1526526490 source:d:\tomas\parcialarreglo-master\cliente.c
+1526597768 source:d:\tomas\parcialarreglo-master\cliente.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -314,12 +314,12 @@
 	<string.h>
 	<ctype.h>
 
-1526526490 source:d:\tomas\parcialarreglo-master\funciones.c
+1526603948 source:d:\tomas\parcialarreglo-master\funciones.c
 	<stdio.h>
 	<stdlib.h>
 	"funciones.h"
 
-1526526490 source:d:\tomas\parcialarreglo-master\informes.c
+1526604921 source:d:\tomas\parcialarreglo-master\informes.c
 	<stdio.h>
 	<stdlib.h>
 	"cliente.h"
@@ -333,7 +333,7 @@
 	"cliente.h"
 	"publicacion.h"
 
-1526594857 source:d:\tomas\parcialarreglo-master\main.c
+1526603287 source:d:\tomas\parcialarreglo-master\main.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -344,7 +344,7 @@
 	"utn.h"
 	"informes.h"
 
-1526526490 source:d:\tomas\parcialarreglo-master\publicacion.c
+1526603515 source:d:\tomas\parcialarreglo-master\publicacion.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
